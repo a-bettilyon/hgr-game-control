@@ -1,6 +1,6 @@
 # YOLO26 Hand Gesture Recognition for Game Control
 
-Real-time webcam detection of hand gestures with a YOLO26 (nano) model fine-tuned on a subset of [HaGRIDv2](https://github.com/hukenovs/hagrid). The long-term goal is controlling a video game with gestures.
+Real-time webcam detection of hand gestures with a YOLO26 (nano) model fine-tuned on a subset of [HaGRID](https://huggingface.co/datasets/miracl/hagrid). The long-term goal is controlling a video game with gestures.
 
 **Gesture classes:** `call`, `dislike`, `fist`, `like`, `ok`, `palm`, `peace`, `rock`, `stop`.
 
@@ -9,7 +9,7 @@ Real-time webcam detection of hand gestures with a YOLO26 (nano) model fine-tune
 ### Step 1: Train in Colab
 Download release v0.2.0, which contains the 9-class HaGRID dataset. Also make a copy of 02_yolo26n_hagrid_9class_full_export.ipynb` and open it in Google Colab (set the runtime to a GPU). The notebook:
 - reads dataset HaGRID images and converts the boxes to YOLO format,
-- fine-tunes `yolo26n.pt` for 100 epochs at 640 px,
+- fine-tunes `yolo26n.pt` (YOLO26 nano) or 100 epochs at 640 px,
 - saves results and `best.pt` to your Google Drive.
 
 Download `best.pt` from Drive and place it in `weights/`. A trained copy is already included if you only want to run inference.
