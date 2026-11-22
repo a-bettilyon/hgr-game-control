@@ -17,8 +17,8 @@ Download `best.pt` from Drive and place it in `weights/`. A trained copy is alre
 ### Step 2: Run inference locally
 
 ```bash
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/a-bettilyon/hgr-game-control.git
+cd hgr-game-control
 conda env create -f environment.yml
 conda activate gesture-control
 python live_gesture.py
