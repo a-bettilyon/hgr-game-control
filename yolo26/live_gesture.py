@@ -8,7 +8,7 @@ from ultralytics import YOLO
 
 def parse_args():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("--weights", default="weights/best.pt", help="path to trained .pt file")
+    p.add_argument("--weights", default="weights/yolo26n_hagrid9_best.pt", help="path to trained .pt file")
     p.add_argument("--cam", type=int, default=0, help="webcam index")
     p.add_argument("--conf", type=float, default=0.5, help="confidence threshold")
     p.add_argument("--imgsz", type=int, default=640, help="inference image size")
