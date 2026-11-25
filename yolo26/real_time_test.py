@@ -2,10 +2,16 @@ import time
 import cv2
 from ultralytics import YOLO
 
-model = YOLO("weights/best.pt")
+# NOTE: weights must be from a *detection* model (not seg/pose/cls/obb)
+# and your ultralytics install should be current: pip install -U ultralytics
+
+model = YOLO("weights/best.pt")    # replace with your weights path
+
+if model.task != "detect":
+    raise SystemExit(f"Expected a detection model, got task='{model.task}'")
 
 #opencv for video stats
-video_path = "videos/best_case_RH.mov"  # Replace with your video file path
+video_path = "videos/best_case_RH.mov"  # replace with your video file path
 cap = cv2.VideoCapture(video_path)
 if not cap.isOpened():
     raise SystemExit(f"Could not open video file {video_path}. Check the path and file permissions.")
